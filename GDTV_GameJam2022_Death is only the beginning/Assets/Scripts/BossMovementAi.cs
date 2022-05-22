@@ -25,7 +25,7 @@ public class BossMovementAi : MonoBehaviour
     }
 
 
-    void ChooseRandomPosAtIntervals()
+    void ChooseRandomPosAtIntervals() // Timer to create random positions at intervals
     {
         moveTimer += Time.deltaTime;
         if (moveTimer >= timeToMove)
@@ -35,12 +35,12 @@ public class BossMovementAi : MonoBehaviour
         }
     }
 
-    private void MoveTowardsPosition(Vector2 target)
+    private void MoveTowardsPosition(Vector2 target) // Moves to the target
     {
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
     }
 
-    private Vector2 RandomizePosition()
+    private Vector2 RandomizePosition() // Creates random target position
     {
         newRandomPos = new Vector2(Random.Range(-3.5f, 3.5f), Random.Range(0f, 4f));
         return newRandomPos;
