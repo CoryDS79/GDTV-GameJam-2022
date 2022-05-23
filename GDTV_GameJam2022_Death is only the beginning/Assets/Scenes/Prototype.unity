@@ -288,6 +288,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1133671932 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 605983181992759242, guid: 40f8c49426a724254a2624f0050197db, type: 3}
+  m_PrefabInstance: {fileID: 605983181794515189}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &605983181794515189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352,9 +357,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1993067413, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1133671932}
+    - target: {fileID: 6681145868072086647, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
+      propertyPath: projectileSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8367420112134338017, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8367420112134338045, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
+      propertyPath: projectileSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8367420112134338046, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
       propertyPath: m_RootOrder

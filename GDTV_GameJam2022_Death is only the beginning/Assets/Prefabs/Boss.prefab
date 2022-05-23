@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 8367420112134338045}
   - component: {fileID: 1090776687}
   - component: {fileID: 6681145868072086647}
+  - component: {fileID: 1993067413}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -210,6 +211,7 @@ MonoBehaviour:
   firePointArray:
   - {fileID: 8367420110290322938}
   - {fileID: 8367420111608929092}
+  rateOfFire: 3
 --- !u!114 &1090776687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +224,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ef531e9af1041bda6ba6230aee19ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rateOfFire: 3
 --- !u!114 &6681145868072086647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +239,18 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6929326228585459711, guid: 5996fe2c8eb9e4a579d6719dd5153431, type: 3}
   firePointArray:
   - {fileID: 2994501157671462306}
+  rateOfFire: 5
+  projectileSpeed: 10
+--- !u!114 &1993067413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367420112134338017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d9fa837ca1a4cdab48cc8d4961f250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 605983181992759223, guid: 40f8c49426a724254a2624f0050197db, type: 3}
