@@ -361,17 +361,9 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1133671932}
-    - target: {fileID: 6681145868072086647, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
-      propertyPath: projectileSpeed
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8367420112134338017, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
       propertyPath: m_Name
       value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 8367420112134338045, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
-      propertyPath: projectileSpeed
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8367420112134338046, guid: 9dd8add572a3d40b9a114ecb14c126d7, type: 3}
       propertyPath: m_RootOrder
