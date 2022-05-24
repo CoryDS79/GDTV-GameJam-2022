@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TargetPlayer : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    GameObject player;
     Vector2 playerPos;
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class TargetPlayer : MonoBehaviour
 
     public Vector2 GetPlayerLocation()
     {
-        Debug.Log(playerPos);
+        // Debug.Log(playerPos);
         return playerPos;
     }
 }

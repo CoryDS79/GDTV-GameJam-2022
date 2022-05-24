@@ -28,6 +28,7 @@ public class GuidedMissileWeapon : MonoBehaviour
         for (int i = 0; i < firePointArray.Length; i++)
         {
             GameObject guidedMissile = Instantiate(projectilePrefab, firePointArray[i].transform.position, Quaternion.identity);
+            // guidedMissile.transform.position = Vector2.MoveTowards(transform.position, targetPlayer.GetPlayerLocation(), projectileSpeed * Time.deltaTime);
             // guidedMissile.transform.Translate(new Vector2(targetPlayer.GetPlayerLocation().x, targetPlayer.GetPlayerLocation().y) * projectileSpeed * Time.deltaTime); // Target player
         }
     }
