@@ -9,11 +9,12 @@ public class BulletWeapon : MonoBehaviour
     [SerializeField] float rateOfFire;
     [SerializeField] float projectileSpeed;
     private float shotTimer = 0f;
+    Player player;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -24,11 +25,15 @@ public class BulletWeapon : MonoBehaviour
 
     void CreateBullets() // Generate Bullets
     {
-        for (int i = 0; i < firePointArray.Length; i++)
+        if (player != null)
         {
-            GameObject genericBullet = Instantiate(bulletPrefab, firePointArray[i].transform.position, Quaternion.identity);
-            genericBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * - projectileSpeed;
+            for (int i = 0; i < firePointArray.Length; i++)
+            {
+                GameObject genericBullet = Instantiate(bulletPrefab, firePointArray[i].transform.position, Quaternion.identity);
+                genericBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * -projectileSpeed;
+            }
         }
+
     }
 
     void Fire() // Countdown and fire at a steady rate

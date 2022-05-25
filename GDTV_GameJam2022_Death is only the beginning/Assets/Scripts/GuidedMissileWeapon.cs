@@ -9,12 +9,12 @@ public class GuidedMissileWeapon : MonoBehaviour
     [SerializeField] float rateOfFire;
     [SerializeField] float projectileSpeed;
     private float shotTimer = 0f;
-    TargetPlayer targetPlayer;
+    Player player;
 
     // Start is called before the first frame update
     void Start()
     {
-        targetPlayer = FindObjectOfType<TargetPlayer>();
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -25,15 +25,17 @@ public class GuidedMissileWeapon : MonoBehaviour
 
     void CreateBullets() // Generate Bullets
     {
-        for (int i = 0; i < firePointArray.Length; i++)
+        if (player != null)
         {
-            GameObject guidedMissile = Instantiate(projectilePrefab, firePointArray[i].transform.position, Quaternion.identity);
-            // guidedMissile.transform.position = Vector2.MoveTowards(transform.position, targetPlayer.GetPlayerLocation(), projectileSpeed * Time.deltaTime);
-            // guidedMissile.transform.Translate(new Vector2(targetPlayer.GetPlayerLocation().x, targetPlayer.GetPlayerLocation().y) * projectileSpeed * Time.deltaTime); // Target player
+            for (int i = 0; i < firePointArray.Length; i++)
+            {
+                GameObject guidedMissile = Instantiate(projectilePrefab, firePointArray[i].transform.position, Quaternion.identity);
+            }
         }
+
     }
 
-        void Fire() // Countdown and fire at a steady rate
+    void Fire() // Countdown and fire at a steady rate
     {
         shotTimer += Time.deltaTime;
         if (shotTimer >= rateOfFire)

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3807946439124638189}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point Burst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7948695198993328796}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point Missle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4719141257522105506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point Missle (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8367420110290322937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8367420111608929091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,9 @@ GameObject:
   - component: {fileID: 6681145868072086647}
   - component: {fileID: 1993067413}
   - component: {fileID: 2374098444288226377}
-  m_Layer: 0
+  - component: {fileID: 4975095953359716815}
+  - component: {fileID: 4252383332286650803}
+  m_Layer: 6
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,3 +337,51 @@ MonoBehaviour:
   - {fileID: 3123218605782731744}
   rateOfFire: 7
   projectileSpeed: 10
+--- !u!60 &4975095953359716815
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367420112134338017}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.22560763, y: 0.8349676}
+      - {x: -0.4104514, y: 0.6584058}
+      - {x: -0.54958963, y: 0.58521605}
+      - {x: -0.94507194, y: 0.42477703}
+      - {x: -0.94873375, y: -0.20705032}
+      - {x: -0.18116888, y: -0.8718343}
+      - {x: 0.14771569, y: -0.8754964}
+      - {x: 0.93042433, y: -0.1992302}
+      - {x: 0.9340863, y: 0.43849277}
+      - {x: 0.66211504, y: 0.82398224}
+--- !u!114 &4252383332286650803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367420112134338017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e84b389ec5d4299b759cd9975f2276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10000

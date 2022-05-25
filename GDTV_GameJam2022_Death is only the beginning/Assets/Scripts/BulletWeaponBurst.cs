@@ -10,12 +10,14 @@ public class BulletWeaponBurst : MonoBehaviour
     [SerializeField] float projectileSpeed;
     private float shotTimer = 0f;
     TargetPlayer targetPlayer;
+    Player player;
 
 
     // Start is called before the first frame update
     void Start()
     {
         targetPlayer = FindObjectOfType<TargetPlayer>();
+        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame
@@ -26,14 +28,18 @@ public class BulletWeaponBurst : MonoBehaviour
 
     void CreateBullets() // Create 3 spaced out bullets
     {
-        for (int j = 0; j < 3; j++) // Run 3 times
+        if (player != null)
         {
-            for (int i = 0; i < firePointArray.Length; i++) // Create bullet
+            for (int j = 0; j < 3; j++) // Run 3 times
             {
-                GameObject targetedBullet = Instantiate(bulletPrefab, firePointArray[i].transform.position * j, Quaternion.identity);
-                targetedBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(targetPlayer.GetPlayerLocation().x, targetPlayer.GetPlayerLocation().y) * projectileSpeed;
+                for (int i = 0; i < firePointArray.Length; i++) // Create bullet
+                {
+                    GameObject targetedBullet = Instantiate(bulletPrefab, firePointArray[i].transform.position * j, Quaternion.identity);
+                    targetedBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(targetPlayer.GetPlayerLocation().x, targetPlayer.GetPlayerLocation().y) * projectileSpeed;
+                }
             }
         }
+
     }
 
     void Fire() // Countdown and fire at a steady rate

@@ -15,7 +15,10 @@ public class LookAt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.up = player.transform.position - transform.position;
+        if (player != null)
+        {
+            transform.up = player.transform.position - transform.position;
+        }
 
     }
 
