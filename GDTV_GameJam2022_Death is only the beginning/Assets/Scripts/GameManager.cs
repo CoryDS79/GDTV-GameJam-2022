@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager instance;
+    EnemySpawner enemySpawner;
+
+    private int bossWaveCount;
+
     private void Awake()
     {
         // Singleton setup. If there is an instance, and it's not me, delete myself.
 
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(this);
         }
         else
         {
-            Instance = this;
+            instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    private void Start()
+    {
+
+    }
+
 }

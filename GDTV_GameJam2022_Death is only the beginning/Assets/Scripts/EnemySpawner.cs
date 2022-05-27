@@ -5,21 +5,28 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] bossPrefab;
+    GameObject boss;
+    private int bossWaveCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("SpawnBoss", 2f);
+        SpawnBoss(bossWaveCount);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (boss == null && bossWaveCount <= bossPrefab.Length)
+        {
+            bossWaveCount += 1;
+            SpawnBoss(bossWaveCount);
+        }
     }
 
-    void SpawnBoss()
+    public void SpawnBoss(int index)
     {
-        GameObject bossOne = Instantiate(bossPrefab[1], new Vector2(0, 11f), Quaternion.identity);
+        boss = Instantiate(bossPrefab[bossWaveCount], new Vector2(0, 11f), Quaternion.identity);
     }
+
 }
