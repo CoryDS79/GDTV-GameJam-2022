@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject bossPrefab;
+    [SerializeField] GameObject[] bossPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,6 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnBoss()
     {
-        Instantiate(bossPrefab, new Vector2(0, 11f), Quaternion.identity);
+        GameObject bossOne = Instantiate(bossPrefab[1], new Vector2(0, 11f), Quaternion.identity);
     }
 }
