@@ -435,6 +435,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1675856893131449632, guid: 24af72d9c91d1423480fc807552b6ea6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 153
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675856893131449639, guid: 24af72d9c91d1423480fc807552b6ea6, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675856893131449639, guid: 24af72d9c91d1423480fc807552b6ea6, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1675856893437751931, guid: 24af72d9c91d1423480fc807552b6ea6, type: 3}
       propertyPath: m_Name
       value: Start Screen UI
