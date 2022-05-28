@@ -8,6 +8,7 @@ public class BulletWeaponBurst : MonoBehaviour
     [SerializeField] GameObject[] firePointArray;
     [SerializeField] float rateOfFire;
     [SerializeField] float projectileSpeed;
+    [SerializeField] int burstSize;
     private float shotTimer = 0f;
     TargetPlayer targetPlayer;
     Player player;
@@ -30,11 +31,11 @@ public class BulletWeaponBurst : MonoBehaviour
     {
         if (player != null)
         {
-            for (int j = 0; j < 3; j++) // Run 3 times
+            for (int j = 0; j < burstSize; j++) // Run 3 times
             {
                 for (int i = 0; i < firePointArray.Length; i++) // Create bullet
                 {
-                    GameObject targetedBullet = Instantiate(bulletPrefab, firePointArray[i].transform.position * j, Quaternion.identity);
+                    GameObject targetedBullet = Instantiate(bulletPrefab, firePointArray[i].transform.position, Quaternion.identity);
                     targetedBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(targetPlayer.GetPlayerLocation().x, targetPlayer.GetPlayerLocation().y) * projectileSpeed;
                 }
             }

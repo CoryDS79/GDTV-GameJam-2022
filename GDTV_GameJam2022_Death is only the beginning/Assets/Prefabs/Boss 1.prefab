@@ -307,6 +307,7 @@ MonoBehaviour:
   - {fileID: 2994501157671462306}
   rateOfFire: 5
   projectileSpeed: 1
+  burstSize: 3
 --- !u!114 &1993067413
 MonoBehaviour:
   m_ObjectHideFlags: 0

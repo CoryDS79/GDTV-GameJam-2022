@@ -5,9 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    EnemySpawner enemySpawner;
-
-    private int bossWaveCount;
 
     private void Awake()
     {

@@ -265,6 +265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 605983181992759242, guid: 40f8c49426a724254a2624f0050197db, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40f8c49426a724254a2624f0050197db, type: 3}
 --- !u!1001 &357395548
@@ -470,9 +474,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1317989829, guid: a44c22b30f1ed4152a4e6c286e645220, type: 3}
+      propertyPath: spawnRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 154666615878388690, guid: a44c22b30f1ed4152a4e6c286e645220, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 154666615878388690, guid: a44c22b30f1ed4152a4e6c286e645220, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 154666615878388691, guid: a44c22b30f1ed4152a4e6c286e645220, type: 3}
       propertyPath: m_RootOrder
@@ -516,6 +528,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 154666615878388691, guid: a44c22b30f1ed4152a4e6c286e645220, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 943245102480395855, guid: a44c22b30f1ed4152a4e6c286e645220, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
