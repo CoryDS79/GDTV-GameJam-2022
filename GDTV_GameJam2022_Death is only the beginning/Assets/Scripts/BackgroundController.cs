@@ -7,12 +7,14 @@ public class BackgroundController : MonoBehaviour
     Vector2 startPos;
     float repeatLength;
     [SerializeField] float parallax;
+    [SerializeField] float acceleration = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
         repeatLength = GetComponent<SpriteRenderer>().bounds.size.y;
+        EventManager.JumpToHyperspace += HyperspaceSpeed;
     }
 
     // Update is called once per frame
@@ -25,6 +27,16 @@ public class BackgroundController : MonoBehaviour
         {
             transform.position = startPos;
         }
+    }
+
+    void HyperspaceSpeed()
+    {
+        parallax *= acceleration;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.JumpToHyperspace -= HyperspaceSpeed;
     }
 
 }

@@ -22,7 +22,12 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        PressToContinue();
+    }
+
+    private void PressToContinue()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
         {
             if (textComponent.text == lines[index])
             {
@@ -44,6 +49,8 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        yield return new WaitForSeconds(1f);
+
         foreach (char c in lines[index].ToCharArray())
         {
             textComponent.text += c;
