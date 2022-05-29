@@ -11,29 +11,29 @@ public class FighterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnFighters();   
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnFighters();
+        //SpawnFighters();
     }
 
-    public void CreateFighters()
+    private void CreateFighters()
     {
         float randomXPos = Random.Range(-5f, 5f);
 
         for (int i = 0; i < 3; i++)
         {
-            float enemySpeed = 3;
+            float enemySpeed = 2;
             GameObject fighter = Instantiate(enemyPrefab[0], new Vector2(randomXPos, 11f + i), Quaternion.identity);
             fighter.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 1) * - enemySpeed;
         }
 
     }
 
-    void SpawnFighters() // Countdown and fire at a steady rate
+    public void SpawnFighters() // Countdown and fire at a steady rate
     {
         spawnTimer += Time.deltaTime;
         if (spawnTimer >= spawnRate)
