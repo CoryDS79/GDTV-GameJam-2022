@@ -6,7 +6,7 @@ public class BossSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] bossPrefab;
     GameObject boss;
-    private int bossWaveCount = 0;
+    public int bossWaveCount = 0;
     public bool bossIsActive;
 
 
@@ -14,18 +14,20 @@ public class BossSpawner : MonoBehaviour
     void Start()
     {
         SpawnBoss(bossWaveCount);
-        bossIsActive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (boss == null && bossWaveCount <= bossPrefab.Length)
+        if (boss == null)
         {
-            bossWaveCount += 1;
             bossIsActive = false;
-            //SpawnBoss(bossWaveCount);
         }
+
+        //if (bossWaveCount <= bossPrefab.Length && boss == null)
+        //{
+        //    SpawnBoss(bossWaveCount);
+        //}
     }
 
     public void SpawnBoss(int index)

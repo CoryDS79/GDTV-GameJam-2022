@@ -24,7 +24,7 @@ public class BulletWeaponBurst : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Fire();
+        //Fire();
     }
 
     void CreateBullets() // Create 3 spaced out bullets
@@ -43,7 +43,7 @@ public class BulletWeaponBurst : MonoBehaviour
 
     }
 
-    void Fire() // Countdown and fire at a steady rate
+    public void Fire() // Countdown and fire at a steady rate
     {
         shotTimer += Time.deltaTime;
         if (shotTimer >= rateOfFire)

@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
-    //public bool bossIsActive = true;
+    BulletWeapon bulletWeapon;
+    BulletWeaponBurst bulletWeaponBurst;
+    GuidedMissileWeapon guidedMissileWeapon;
+    Dialogue dialogue;
 
-    //private void Start()
-    //{
+    private void Start()
+    {
+        bulletWeapon = FindObjectOfType<BulletWeapon>();
+        bulletWeaponBurst = FindObjectOfType<BulletWeaponBurst>();
+        guidedMissileWeapon = FindObjectOfType<GuidedMissileWeapon>();
+        dialogue = FindObjectOfType<Dialogue>();
+    }
 
-    //}
-    //private void OnDestroy()
-    //{
-    //    bossIsActive = false;
-    //}
+    private void Update()
+    {
+        if (dialogue.dialogueEnded == true)
+        {
+            bulletWeapon.Fire();
+            bulletWeaponBurst.Fire();
+            guidedMissileWeapon.Fire();
+
+        }
+
+    }
+
 }

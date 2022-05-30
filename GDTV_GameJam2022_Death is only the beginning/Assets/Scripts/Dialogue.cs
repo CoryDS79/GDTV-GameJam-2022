@@ -9,6 +9,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] float textSpeed;
     [TextArea(3, 10)]
     [SerializeField] string[] lines;
+    public bool dialogueEnded;
 
     private int index;
     
@@ -37,6 +38,7 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+
             }
         }
     }
@@ -45,6 +47,7 @@ public class Dialogue : MonoBehaviour
     {
         index = 0;
         StartCoroutine(TypeLine());
+        dialogueEnded = false;
     }
 
     IEnumerator TypeLine()
@@ -66,6 +69,11 @@ public class Dialogue : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-        else gameObject.SetActive(false);
+        else
+        {
+            dialogueEnded = true;
+            textComponent.gameObject.SetActive(false);
+            //gameObject.SetActive(false);
+        }
     }
 }

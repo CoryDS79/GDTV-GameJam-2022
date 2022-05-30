@@ -6,7 +6,6 @@ using System;
 public class EventManager : MonoBehaviour
 {
     public static event Action JumpToHyperspace;
-    //public static event Action EnemyWaveController;
 
     // Start is called before the first frame update
     void Start()
