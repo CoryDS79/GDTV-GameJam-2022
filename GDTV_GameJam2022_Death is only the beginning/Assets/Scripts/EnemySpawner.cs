@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     BossSpawner bossSpawner;
     GunshipSpawner gunshipSpawner;
     FighterSpawner fighterSpawner;
+    bool dialogue;
     private float enemyTimer;
     [SerializeField] private float enemySpawnTime;
 
@@ -19,12 +20,17 @@ public class EnemySpawner : MonoBehaviour
         bossSpawner = FindObjectOfType<BossSpawner>();
         gunshipSpawner = FindObjectOfType<GunshipSpawner>();
         fighterSpawner = FindObjectOfType<FighterSpawner>();
+        dialogue = FindObjectOfType<Dialogue>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemies();
+        if (dialogue = FindObjectOfType<Dialogue>() == true)
+        {
+            SpawnEnemies();
+        }
+
 
     }
 

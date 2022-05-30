@@ -6,7 +6,7 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] GameObject playerProjectilePrefab;
     [SerializeField] float projectileSpeed;
-    Dialogue dialogue;
+    bool dialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (dialogue.dialogueEnded == true)
+        if (dialogue = FindObjectOfType<Dialogue>().dialogueEnded == true)
         {
             FireProjectile();
         }

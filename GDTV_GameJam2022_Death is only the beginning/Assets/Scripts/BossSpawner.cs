@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BossSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] bossPrefab;
+    [SerializeField] GameObject textComponent;
+    [SerializeField] GameObject introDialogue;
+
+    Dialogue dialogue;
     GameObject boss;
     public int bossWaveCount = 0;
     public bool bossIsActive;
@@ -13,6 +18,7 @@ public class BossSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogue = FindObjectOfType<Dialogue>();
         SpawnBoss(bossWaveCount);
     }
 
@@ -22,6 +28,9 @@ public class BossSpawner : MonoBehaviour
         if (boss == null)
         {
             bossIsActive = false;
+            dialogue.dialogueEnded = false;
+            introDialogue.gameObject.SetActive(false);
+            textComponent.gameObject.SetActive(true);
         }
 
         //if (bossWaveCount <= bossPrefab.Length && boss == null)
